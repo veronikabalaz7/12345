@@ -33,27 +33,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         thankYouMessage.isHidden = true
 
-        
         self.textInput.delegate = self
+        
+        
+        
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-           self.view.endEditing(true)
-           return false
-       }
     
     
     //hiding placeholder once editing starts
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-      //  textField.delegate = self
-        
         if textInput.isFirstResponder == true {
             textInput.placeholder = nil
         }
-        
-    
     }
+    
+    //hiding keyboard after editing
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textInput.resignFirstResponder()
+        let text = textInput.text
+        
+           self.view.endEditing(true)
+           return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      textInput.resignFirstResponder()
+      let text = textInput.text
+        if textField.text == "" {
+            return true
+        } else {
+           return false
+        }
+    
+    
     
     
        
