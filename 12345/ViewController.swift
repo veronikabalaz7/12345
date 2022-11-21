@@ -57,20 +57,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
            return false
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-      textInput.resignFirstResponder()
-      let text = textInput.text
-        if textField.text == "" {
-            return true
-        } else {
-           return false
-        }
+//     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//       textInput.resignFirstResponder()
+//       let text = textInput.text
+//         if textField.text == "" {
+//             return true
+//         } else {
+//            return false
+//         }
     
     
     
     
        
-
+    }
 
 }
 
